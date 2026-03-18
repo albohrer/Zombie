@@ -1,5 +1,6 @@
 import pygame
 
+
 class Player(pygame.sprite.Sprite):
 
     def __init__(self):
@@ -10,7 +11,6 @@ class Player(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.midleft = (10, 300)
         self.speed = 4
-
 
     def update(self, keys):
 

@@ -30,44 +30,44 @@ class Game:
         self.shoot_sound = pygame.mixer.Sound("assets/gunshoot.mp3")
 
     def menu(self):
-            font_title = pygame.font.Font(None, 60)
-            font_menu = pygame.font.Font(None, 40)
+        font_title = pygame.font.Font(None, 60)
+        font_menu = pygame.font.Font(None, 40)
 
-            def centralizar(texto, y):
-                x = (800 - texto.get_width()) // 2
-                self.screen.blit(texto, (x, y))
+        def centralizar(texto, y):
+            x = (800 - texto.get_width()) // 2
+            self.screen.blit(texto, (x, y))
 
-            while True:
+        while True:
 
-                self.screen.fill((0, 0, 0))
+            self.screen.fill((0, 0, 0))
 
-                # textos
-                title = font_title.render("ZOMBIE SURVIVAL", True, (0, 0, 255))
-                play = font_menu.render("ENTER - Start", True, (0, 255, 0))
-                shoot = font_menu.render("SPACE - Shoot", True, (255, 255, 255))
-                up = font_menu.render("UP ARROW - Move Up", True, (255, 255, 255))
-                down = font_menu.render("DOWN ARROW - Move Down", True, (255, 255, 255))
+            # textos
+            title = font_title.render("ZOMBIE SURVIVAL", True, (0, 0, 255))
+            play = font_menu.render("ENTER - Start", True, (0, 255, 0))
+            shoot = font_menu.render("SPACE - Shoot", True, (255, 255, 255))
+            up = font_menu.render("UP ARROW - Move Up", True, (255, 255, 255))
+            down = font_menu.render("DOWN ARROW - Move Down", True, (255, 255, 255))
 
-                # layout (ordem corrigida)
-                centralizar(title, 120)
-                centralizar(play, 220)
+            # layout (ordem corrigida)
+            centralizar(title, 120)
+            centralizar(play, 220)
 
-                # controles abaixo
-                centralizar(shoot, 320)
-                centralizar(up, 370)
-                centralizar(down, 420)
+            # controles abaixo
+            centralizar(shoot, 320)
+            centralizar(up, 370)
+            centralizar(down, 420)
 
-                pygame.display.update()
+            pygame.display.update()
 
-                for event in pygame.event.get():
+            for event in pygame.event.get():
 
-                    if event.type == pygame.QUIT:
-                        pygame.quit()
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    return
+
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_RETURN:
                         return
-
-                    if event.type == pygame.KEYDOWN:
-                        if event.key == pygame.K_RETURN:
-                            return
 
     def run(self):
 

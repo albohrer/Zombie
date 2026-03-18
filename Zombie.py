@@ -1,6 +1,7 @@
 import pygame
 import random
 
+
 class Zombie(pygame.sprite.Sprite):
 
     def __init__(self):
@@ -10,7 +11,7 @@ class Zombie(pygame.sprite.Sprite):
         self.image = pygame.transform.scale(self.image, (80, 80))
         self.rect = self.image.get_rect()
 
-        self.speed = random.randint(2,4)
+        self.speed = random.randint(2, 4)
 
         self.spawn()
 
